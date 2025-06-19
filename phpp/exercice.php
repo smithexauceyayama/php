@@ -12,7 +12,7 @@
     try {
         $connexion = new PDO("mysql:host=$serveur;dbname=test2",$login);
         
-        $requete = "ALTER TABLE id ADD sexe INT(20)";
+        $requete = "ALTER TABLE id ADD age INT(100)";
         $connexion -> exec($requete);
         
     }
