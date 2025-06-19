@@ -12,8 +12,7 @@
     try {
         $connexion = new PDO("mysql:host=$serveur;dbname=test2",$login);
         
-        $requete = "ALTER TABLE id ADD age INT(100)";
-        $connexion -> exec($requete);
+       $requete1 = $connexion->prepare ("SELECT prenom FROM id")
         
     }
     catch(PDOException $e){
