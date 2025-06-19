@@ -10,15 +10,12 @@
     $serveur = "localhost";
     $login = "root";
     try {
-        $connexion = new PDO("mysql:host=$serveur;dbname=test",$login);
-        $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $codesql = "CREATE TABLE visiteurs(
-        id INT UNSIGNED AUTO_INCREMENT
-        prenom
-        nom
-        email
-        )";
-        echo 'Connexion à la base des données reussi !!!';
+        $connexion = new PDO("mysql:host=$serveur;dbname=test2",$login);
+        $insertion = "INSERT INTO id(nom,prenom,email)
+        VALUES ('Giraud', 'Pierre', 'pierregiraud@edhec.com')";
+
+        $connexion->exec($insertion);
+        echo 'Valeurs bien insrées';
     }
     catch(PDOException $e){
         echo 'Echec de la connexion :'.$e->getMessage();
