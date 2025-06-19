@@ -11,11 +11,10 @@
     $login = "root";
     try {
         $connexion = new PDO("mysql:host=$serveur;dbname=test2",$login);
-        $insertion = "INSERT INTO id(nom,prenom,email)
-        VALUES ('Giraud', 'Pierre', 'pierregiraud@edhec.com')";
-
-        $connexion->exec($insertion);
-        echo 'Valeurs bien insrées';
+        
+        $requete = "ALTER TABLE id ADD sexe INT(20)";
+        $connexion -> exec($requete);
+        
     }
     catch(PDOException $e){
         echo 'Echec de la connexion :'.$e->getMessage();
